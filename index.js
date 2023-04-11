@@ -16,19 +16,19 @@ app.listen(5000, () => {
 
 clientMQTT.on("connect", () => {
   // createAddEvent(device_id,password);
-  // getData(device_id, password);
-  updateData(device_id, password, {
-    battery: 95,
-    coordinates: {
-      latitude: 9.779349,
-      longitude: 105.6189045,
-    },
-    humi: 24,
-    optic: 21,
-    temp: 32,
-    rain: true,
-    grid_status: true,
-  });
+  getData(device_id, password);
+  // updateData(device_id, password, {
+  //   battery: 95,
+  //   coordinates: {
+  //     latitude: 9.779349,
+  //     longitude: 105.6189045,
+  //   },
+  //   humi: 24,
+  //   optic: 21,
+  //   temp: 32,
+  //   rain: true,
+  //   grid_status: true,
+  // });
 });
 addTopic(`device/${device_id}`, (payload) => {
   console.log(JSON.parse(payload));
